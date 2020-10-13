@@ -1,0 +1,59 @@
+{
+	"id": "ec903c5f-2c3d-dcb4-6b2e-9bfcec6d2bbe",
+	"name": "API_Testing",
+	"description": "",
+	"order": [
+		"6a9593d6-80f0-dcb9-7f29-0c685a104f15",
+		"bb959193-4915-252d-222b-c9ccd9d1522a"
+	],
+	"folders_order": [],
+	"folders": [],
+	"owner": "9668210",
+	"hasRequests": true,
+	"requests": [
+		{
+			"id": "6a9593d6-80f0-dcb9-7f29-0c685a104f15",
+			"name": "posts",
+			"description": "",
+			"collectionId": "ec903c5f-2c3d-dcb4-6b2e-9bfcec6d2bbe",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"tests": "pm.test(\"Request All Posts Content Type\",()=>{\n    pm.expect(pm.response.headers.get(\"Content-Type\").includes(\"application/json\"))\n})\n",
+			"preRequestScript": "",
+			"url": "{{url}}/posts",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "ec903c5f-2c3d-dcb4-6b2e-9bfcec6d2bbe"
+		},
+		{
+			"id": "bb959193-4915-252d-222b-c9ccd9d1522a",
+			"name": "posts",
+			"description": "",
+			"collectionId": "ec903c5f-2c3d-dcb4-6b2e-9bfcec6d2bbe",
+			"method": "POST",
+			"headers": "Content-Type: application/json",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n\t\"userId\":1,\n\t\"id\":100,\n\t\"title\":\"uyuyuyuy\",\n\t\"body\":\"lavlavlav\"\n}",
+			"tests": "pm.test(\"Create New Post\",()=>{\n    pm.expect(pm.response.code==\"201\")\n})\n\n// console.log(pm.response)\n",
+			"preRequestScript": "",
+			"url": "{{url}}/posts",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"type": "text"
+				}
+			],
+			"collection_id": "ec903c5f-2c3d-dcb4-6b2e-9bfcec6d2bbe"
+		}
+	]
+}
